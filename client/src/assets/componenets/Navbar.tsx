@@ -82,7 +82,7 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className=" shadow-md">
         <div className="relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-3 flex justify-between items-center relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-3 pb-1 flex justify-between items-center relative z-10">
             {/* Logo */}
             <div className="flex items-center cursor-pointer">
               <img
