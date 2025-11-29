@@ -88,7 +88,7 @@ const Navbar = () => {
               <img
                 src="/Abet logo.jpg"
                 alt="Abet Logo"
-                className="h-10 w-10 rounded-full object-cover border-2 border-[#FFA726] shadow-md animate-swing"
+                className="h-16 w-16 rounded-full object-cover border-2 border-[#FFA726] shadow-md animate-swing"
               />
               <span className="ml-3 font-extrabold text-xl sm:text-2xl text-[#1565C0] tracking-wide underline decoration-[#FFA726] underline-offset-4">
                 ABET
