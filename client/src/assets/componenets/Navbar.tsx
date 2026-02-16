@@ -21,49 +21,56 @@ const Navbar = () => {
   return (
     <header className="w-full fixed top-0 left-0 z-30">
       {/* Top Contact Bar */}
-      <div className="w-full bg-[#1565C0] text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-2 flex flex-col sm:flex-row justify-between items-center">
+      <div className="w-full bg-gradient-to-r from-[#1565C0] to-[#0d47a1] text-white text-sm border-b border-blue-600/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-2.5 flex flex-col sm:flex-row justify-between items-center">
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row sm:space-x-6 text-center sm:text-left">
             <a
               href="tel:0911508734"
-              className="flex items-center justify-center space-x-2 hover:text-[#FFA726] transition-colors duration-200"
+              className="flex items-center justify-center space-x-2 hover:text-[#FFA726] transition-all duration-300 group"
             >
-              <Phone className="w-4 h-4" />
-              <span>0911508734</span>
+              <div className="bg-white/10 group-hover:bg-[#FFA726]/20 rounded-full p-1.5 transition-all duration-300">
+                <Phone className="w-3.5 h-3.5" />
+              </div>
+              <span className="font-medium">0911508734</span>
             </a>
             <a
               href="mailto:g.fikre2@gmail.com"
-              className="flex items-center justify-center space-x-2 hover:text-[#FFA726] transition-colors duration-200 mt-1 sm:mt-0"
+              className="flex items-center justify-center space-x-2 hover:text-[#FFA726] transition-all duration-300 group mt-1.5 sm:mt-0"
             >
-              <Mail className="w-4 h-4" />
-              <span>g.fikre2@gmail.com</span>
+              <div className="bg-white/10 group-hover:bg-[#FFA726]/20 rounded-full p-1.5 transition-all duration-300">
+                <Mail className="w-3.5 h-3.5" />
+              </div>
+              <span className="font-medium">g.fikre2@gmail.com</span>
             </a>
           </div>
 
-          {/* Social Icons (hidden on small screens) */}
-          <div className="hidden md:flex space-x-4 mt-2 sm:mt-0">
+          {/* Social Icons */}
+          <div className="hidden md:flex items-center space-x-2 mt-2 sm:mt-0">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#FFA726] transition-colors duration-200"
+              className="group relative bg-white/10 hover:bg-[#1877F2] rounded-full p-2.5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#1877F2]/30"
+              aria-label="Facebook"
             >
-              <Facebook className="w-5 h-5" />
+              <Facebook className="w-4 h-4 group-hover:text-white transition-colors" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#FFA726] transition-colors duration-200"
+              className="group relative bg-white/10 hover:bg-gradient-to-r hover:from-[#E4405F] hover:to-[#FCAF45] rounded-full p-2.5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#E4405F]/30"
+              aria-label="Instagram"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-4 h-4 group-hover:text-white transition-colors" />
             </a>
             <a
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#FFA726] transition-colors duration-200"
+              className="group relative bg-white/10 hover:bg-black rounded-full p-2.5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-black/30"
+              aria-label="TikTok"
             >
               <TikTokIcon />
             </a>
@@ -71,39 +78,51 @@ const Navbar = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#FFA726] transition-colors duration-200"
+              className="group relative bg-white/10 hover:bg-[#0077B5] rounded-full p-2.5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#0077B5]/30"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 group-hover:text-white transition-colors" />
             </a>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav className=" shadow-md">
+      <nav className="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100">
         <div className="relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-3 pb-1 flex justify-between items-center relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center relative z-10">
             {/* Logo */}
-            <div className="flex items-center cursor-pointer">
-              <img
-                src="/Abet logo.jpg"
-                alt="Abet Logo"
-                className="h-16 w-16 rounded-full object-cover border-2 border-[#FFA726] shadow-md animate-swing"
-              />
-              <span className="ml-3 font-extrabold text-xl sm:text-2xl text-[#1565C0] tracking-wide underline decoration-[#FFA726] underline-offset-4">
-                ABET
-              </span>
-            </div>
+            <a
+              href="#home"
+              className="flex items-center cursor-pointer group"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FFA726] to-[#FFB74D] rounded-full blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                <img
+                  src="/Abet logo.jpg"
+                  alt="Abet Logo"
+                  className="relative h-14 w-14 sm:h-16 sm:w-16 rounded-full object-cover border-[3px] border-[#FFA726] shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="ml-3 flex flex-col">
+                <span className="font-extrabold text-xl sm:text-2xl text-[#1565C0] tracking-tight group-hover:text-[#0d47a1] transition-colors">
+                  ABET
+                </span>
+                <span className="text-xs text-gray-500 font-medium -mt-1">Delivery</span>
+              </div>
+            </a>
 
             {/* Desktop Links */}
-            <ul className="hidden md:flex space-x-6 lg:space-x-10 text-[#1565C0] font-medium">
-              {["Home", "Services", "How It Works", "Contact"].map((item) => (
+            <ul className="hidden md:flex items-center space-x-1 lg:space-x-2">
+              {["Home", "Services", "Restaurants", "How It Works", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                    className="hover:text-[#E53935] transition-colors duration-200"
+                    className="relative px-4 py-2 text-[#1565C0] font-semibold text-sm lg:text-base rounded-lg transition-all duration-300 hover:text-[#FFA726] group"
                   >
-                    {item}
+                    <span className="relative z-10">{item}</span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#FFA726]/10 to-[#FFB74D]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#FFA726] to-[#FFB74D] group-hover:w-3/4 transition-all duration-300"></span>
                   </a>
                 </li>
               ))}
@@ -111,14 +130,19 @@ const Navbar = () => {
 
             {/* Sign In Button */}
             <div className="hidden md:block">
-              <button className="px-5 py-2 bg-[#FFA726] text-[#1565C0] rounded-full shadow-md transition transform hover:scale-105 hover:shadow-lg font-semibold">
-                Sign In
+              <button className="relative px-6 py-2.5 bg-gradient-to-r from-[#FFA726] to-[#FFB74D] text-[#1565C0] rounded-full shadow-md hover:shadow-xl transition-all duration-300 font-bold text-sm hover:scale-105 group overflow-hidden">
+                <span className="relative z-10">Sign In</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#FFB74D] to-[#FFA726] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button onClick={() => setIsOpen(!isOpen)}>
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Toggle menu"
+              >
                 {isOpen ? (
                   <X className="w-7 h-7 text-[#1565C0]" />
                 ) : (
@@ -128,59 +152,78 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Decorative Wavy Bottom */}
-          <div className="absolute bottom-0 left-0 w-full z-0">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1440 80"
-              className="w-full h-8 sm:h-10"
-              preserveAspectRatio="none"
-            >
-              <path
-                fill="#FFA726"
-                d="M0,32L60,48C120,64,240,96,360,96C480,96,600,64,720,53.3C840,43,960,53,1080,64C1200,75,1320,85,1380,90.7L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-              ></path>
-            </svg>
-          </div>
+          {/* Decorative Accent Line */}
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFA726] via-[#FFB74D] to-[#FFA726]"></div>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-[#1565C0] shadow-md">
-            <ul className="flex flex-col items-center space-y-5 py-6 text-white font-medium">
-              {["Home", "Services", "How It Works", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                    className="hover:text-[#FFA726] transition-colors duration-200"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item}
-                  </a>
+          <div className="md:hidden bg-gradient-to-b from-[#1565C0] to-[#0d47a1] shadow-xl border-t border-blue-600/20">
+            <div className="px-4 py-6">
+              <ul className="flex flex-col space-y-4">
+                {["Home", "Services", "Restaurants", "How It Works", "Contact"].map((item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase().replace(/ /g, "-")}`}
+                      className="block px-4 py-3 text-white font-semibold rounded-lg hover:bg-white/10 hover:text-[#FFA726] transition-all duration-300"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+                <li className="pt-2">
+                  <button className="w-full px-6 py-3 bg-gradient-to-r from-[#FFA726] to-[#FFB74D] text-[#1565C0] rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl font-bold">
+                    Sign In
+                  </button>
                 </li>
-              ))}
-              <li>
-                <button className="px-5 py-2 bg-[#FFA726] text-[#1565C0] rounded-full shadow-md transition transform hover:scale-105 hover:shadow-lg font-semibold">
-                  Sign In
-                </button>
-              </li>
-            </ul>
+                {/* Mobile Social Links */}
+                <li className="pt-4 border-t border-white/20">
+                  <div className="flex justify-center space-x-4">
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 hover:bg-[#1877F2] rounded-full p-3 transition-all duration-300 hover:scale-110"
+                      aria-label="Facebook"
+                    >
+                      <Facebook className="w-5 h-5 text-white" />
+                    </a>
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 hover:bg-gradient-to-r hover:from-[#E4405F] hover:to-[#FCAF45] rounded-full p-3 transition-all duration-300 hover:scale-110"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="w-5 h-5 text-white" />
+                    </a>
+                    <a
+                      href="https://tiktok.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 hover:bg-black rounded-full p-3 transition-all duration-300 hover:scale-110"
+                      aria-label="TikTok"
+                    >
+                      <TikTokIcon />
+                    </a>
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/10 hover:bg-[#0077B5] rounded-full p-3 transition-all duration-300 hover:scale-110"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin className="w-5 h-5 text-white" />
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         )}
       </nav>
 
-      {/* Hanging Animation */}
-      <style>{`
-        @keyframes swing {
-          0% { transform: rotate(3deg); }
-          50% { transform: rotate(-3deg); }
-          100% { transform: rotate(3deg); }
-        }
-        .animate-swing {
-          animation: swing 3s infinite ease-in-out;
-          transform-origin: top center;
-        }
-      `}</style>
     </header>
   );
 };

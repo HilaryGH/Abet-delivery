@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { Mail, Instagram, Facebook, Twitter } from "lucide-react";
+import RestaurantList from "./RestaurantList";
+import type { Restaurant } from "../../types/restaurant";
 
-const Home = () => {
+interface HomeProps {
+  onOrderClick: (restaurant: Restaurant) => void;
+}
+
+const Home = ({ onOrderClick }: HomeProps) => {
   const images = ["/food1.jpg", "/food2.jpg", "/food3.jpg", "/food4.jpg"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -45,9 +51,12 @@ const Home = () => {
             Get your parcels, groceries, or food delivered to your doorstep
             quickly and safely.
           </p>
-          <button className="bg-[#FFA726] text-white px-6 py-3 rounded-full font-semibold hover:text-[#1565C0] hover:bg-yellow-500 transition w-full sm:w-auto">
+          <a 
+            href="#restaurants"
+            className="bg-[#FFA726] text-white px-6 py-3 rounded-full font-semibold hover:text-[#1565C0] hover:bg-yellow-500 transition w-full sm:w-auto inline-block text-center"
+          >
             Order Now
-          </button>
+          </a>
         </div>
       </section>
 
@@ -108,6 +117,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Restaurants Section */}
+      <RestaurantList onOrderClick={onOrderClick} />
+
       {/* Footer */}
       <footer className="relative bg-black text-white pt-12 px-4">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -130,7 +142,7 @@ const Home = () => {
                 Quick Links
               </h3>
               <ul className="space-y-2">
-                {["Home", "Services", "How It Works", "Contact"].map((link) => (
+                {["Home", "Services", "Restaurants", "How It Works", "Contact"].map((link) => (
                   <li key={link}>
                     <a
                       href={`#${link.toLowerCase().replace(/ /g, "-")}`}
