@@ -44,6 +44,11 @@ const Home = ({ onOrderClick }: HomeProps) => {
 
         {/* Content */}
         <div className="relative z-10 px-4 max-w-2xl">
+          <div className="mb-4">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFA726] mb-2 tracking-wide">
+              Cook, Share, Connect
+            </p>
+          </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
             Fast & Reliable Delivery
           </h1>
@@ -159,9 +164,12 @@ const Home = ({ onOrderClick }: HomeProps) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
             {/* About */}
             <div>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-[#1565C0] underline decoration-[#FFA726] underline-offset-4 mb-4">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-[#1565C0] underline decoration-[#FFA726] underline-offset-4 mb-2">
                 ABET
               </h2>
+              <p className="text-[#FFA726] font-semibold text-sm mb-3 tracking-wide">
+                Cook, Share, Connect
+              </p>
               <p className="text-gray-300 text-sm sm:text-base">
                 Abet Delivery provides fast and reliable food delivery services across
                 the city. Order from your favorite restaurants and get it delivered fresh!

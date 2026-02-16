@@ -108,7 +108,9 @@ const Navbar = () => {
                 <span className="font-extrabold text-xl sm:text-2xl text-[#1565C0] tracking-tight group-hover:text-[#0d47a1] transition-colors">
                   ABET
                 </span>
-                <span className="text-xs text-gray-500 font-medium -mt-1">Delivery</span>
+                <span className="text-xs text-[#FFA726] font-semibold -mt-1 tracking-wide">
+                  Cook, Share, Connect
+                </span>
               </div>
             </a>
 
